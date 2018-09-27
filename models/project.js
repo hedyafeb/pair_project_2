@@ -1,14 +1,36 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Project = sequelize.define('Project', {
-    name: DataTypes.STRING,
-    description: DataTypes.STRING,
-    target: DataTypes.INTEGER,
-    currentAmmount: DataTypes.INTEGER
+    name: {
+      type:DataTypes.STRING,
+      validate:{
+        notEmpty: true,
+      }
+    },
+    description: {
+      type:DataTypes.STRING,
+      validate:{
+        notEmpty: true,
+      }
+    },
+    target: {
+      type:DataTypes.INTEGER,
+      validate:{
+        isInt: true,
+      }
+    },
+    currentAmmount: {
+      type:DataTypes.INTEGER,
+      validate:{
+        isInt: true,
+      }
+    }
   }, {});
   Project.associate = function(models) {
     // associations can be defined here
-    Project.belongsToMany(models.User,{through:Transaction})
+    // Project.belongsToMany(models.User,{through:Transaction})
   }
   return Project;
 }
+
+// isInt

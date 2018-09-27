@@ -1,9 +1,9 @@
 const routes = require('express').Router();
-const { Project } = require('../models/index.js') 
+const { User } = require('../models/index.js') 
 
-class ProjectController {
+class UserController {
     static readAll(req, res) {
-        Project.findAll()
+        User.findAll()
         .then( projects => {
             // res.send(projects)
             res.render('projects_list.ejs', {projects})
@@ -12,13 +12,13 @@ class ProjectController {
             res.send(err)
         })
     }
-    
+
     static add(req,res){
         res.render('add-project.ejs')
     }
 
     static save(req,res){
-        Project.create({
+        User.create({
             name:req.body.name,
             description:req.body.description,
             target:req.body.target,
@@ -33,7 +33,7 @@ class ProjectController {
     }
 
     static delete(req,res){
-        Project.destroy({
+        User.destroy({
             where:{
                 id:req.params.id
             }
@@ -48,7 +48,7 @@ class ProjectController {
 
     
     static getId(req,res){
-        Project.findById(req.params.id)
+        User.findById(req.params.id)
         .then(function(data){
             res.render('edit-project.ejs',{data})
         })
@@ -58,7 +58,7 @@ class ProjectController {
     }
 
     static getId(req,res){
-        Project.findById(req.params.id)
+        User.findById(req.params.id)
         .then(function(data){
             res.render('edit-project.ejs',{data})
         })
@@ -68,7 +68,7 @@ class ProjectController {
     }
 
     static update(req,res){
-        Project.update({
+        User.update({
             name:req.body.name,
             description:req.body.description,
             target:req.body.target,
@@ -86,4 +86,4 @@ class ProjectController {
 
 
 
-module.exports = ProjectController
+module.exports = UserController
