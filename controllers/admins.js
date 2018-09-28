@@ -56,29 +56,28 @@ class AdminController {
         })
     }
 
-    // static approveTransaction(req, res) {
-    //     Transaction.update(
-    //         { status: 'approved' }, 
-    //         { where: {ProjectId: req.params.ProjectId, UserId: req.params.UserId }
-    //     })
-    //     .then( () => {
-    //         res.redirect('/admins/transactionlist')
-    //     })
-    //     .catch( err => {
-    //         res.send(err)
-    //     })
-    // }
 
 
 
     static approveTransaction(req, res) {
         Transaction.update(
             { status: 'approved' }, 
-            { where: {ProjectId: req.params.ProjectId, UserId: req.params.UserId }
+            { where: {id: req.params.transactionId  }
         })
         .then( () => {
             res.redirect('/admins/transactionlist')
         })
+        // .then( () => {
+        //     Project.findOne({
+        //         where: {id: req.params.ProjectId}
+        //     })
+        //     .then( project => {
+        //         project.currentAmmount += Number(Transaction.amount) 
+        //         project.save()
+        //     }).then(() => {
+        //         res.render('users_thankyou.ejs')
+        //     })
+        // })
         .catch( err => {
             res.send(err)
         })
@@ -87,7 +86,7 @@ class AdminController {
     static rejectTransaction(req, res) {
         Transaction.update(
             { status: 'rejected' }, 
-            { where: {ProjectId: req.params.ProjectId, UserId: req.params.UserId }
+            { where: {id: req.params.transactionId }
         })
         .then( () => {
             res.redirect('/admins/transactionlist')

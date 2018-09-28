@@ -64,13 +64,22 @@ class UserController {
             }
         )
         .then( () => {
-            res.render('users_thankyou.ejs')
+            Project.findOne({
+                where: {id: req.params.ProjectId}
+            })
+            .then( project => {
+                project.currentAmmount += Number(req.body.amount) 
+                project.save()
+            }).then(() => {
+                res.render('users_thankyou.ejs')
+            })
         })
         .catch( err => {
             res.send(err)
         })
     }
 
+     
 }
 
 

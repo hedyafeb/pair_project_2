@@ -10,8 +10,8 @@ routes.post('/login', AdminController.loginSuccess)
 routes.get('/transactionlist', AdminController.readAllTransactions) 
 routes.get('/transactions', AdminController.createTransactionForm)
 routes.post('/transactions', AdminController.createTransaction)
-routes.get('/transactions/:ProjectId/user/:UserId/approved', AdminController.approveTransaction)
-routes.get('/transactions/:ProjectId/user/:UserId/rejected', AdminController.rejectTransaction)
+routes.get('/transactions/:ProjectId/user/:UserId/approved/:transactionId', AdminController.approveTransaction)
+routes.get('/transactions/:ProjectId/user/:UserId/rejected/:transactionId', AdminController.rejectTransaction)
 routes.get('/projects/add', AdminController.addProjectForm)
 // post yg add blom
 

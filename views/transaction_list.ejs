@@ -30,8 +30,8 @@
                     <td><%=transaction.amount%></td>
                     <td><%=transaction.status%></td>
                     <td>
-                        <a href="/admins/transactions/<%=transaction.ProjectId%>/user/<%=transaction.UserId%>/approved">Approve</a> ||
-                        <a href="/admins/transactions/<%=transaction.ProjectId%>/user/<%=transaction.UserId%>/rejected">Reject</a>
+                        <a href="/admins/transactions/<%=transaction.ProjectId%>/user/<%=transaction.UserId%>/approved/<%=transaction.id%>">Approve</a> ||
+                        <a href="/admins/transactions/<%=transaction.ProjectId%>/user/<%=transaction.UserId%>/rejected/<%=transaction.id%>">Reject</a>
                     </td>
                 </tr>
             <% }) %>
