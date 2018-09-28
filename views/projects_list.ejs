@@ -19,7 +19,7 @@
             <th>Description</th>
             <th>Target</th>
             <th>Current Amount</th>
-            <th>Action</th>
+            <th colspan="2">Action</th>
         </tr>
         </thead>
             <% projects.forEach(function(result) { %>
@@ -29,6 +29,7 @@
             <td><%= result.target %></td>
             <td><%= result.currentAmmount %></td>
             <td><a href="/projects/<%= result.id %>/edit">Edit</a> | <a href="/projects/<%= result.id %>/delete">Delete</a></td>
+            <td><button><a href="">Donate</a></button></td>
         </tr>
             <%  });  %>
     </table>

@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Project</title>
+    <title>Update User</title>
 </head>
 <body>
     <form action="/users/<%= data.id %>/edit" method="post">
         Name : <input type="text" name="name"  value="<%= data.name %>">
         <br>
-        Description :
-            <input type="text" name="description" value="<%= data.description %>">
+        Email :
+            <input type="text" name="email" value="<%= data.email %>">
         <br>
-        Target :<input type="text" name="target" value="<%= data.target %>">
+        Password :<input type="text" name="password" value="<%= data.password %>">
         <br>
-        Current Ammount :<input type="text" name="current_amount" value="<%= data.currentAmmount %>">
-        <br>
-        <input type="submit" value="Edit Project">
+        <input type="submit" value="Update User">
     </form>
 </body>
 </html>

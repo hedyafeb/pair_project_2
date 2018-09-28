@@ -12,7 +12,7 @@ class ProjectController {
             res.send(err)
         })
     }
-    
+    // UPDATED
     static add(req,res){
         res.render('add-project.ejs')
     }

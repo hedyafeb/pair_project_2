@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form-donate</title>
+    <style type="text/css">
+        .center{
+            margin-left: 40%
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <form action="/users/donate" method="post">
+            Username :
+            <select >
+                <% for (let i=0; i < dataUsers.length; i++) { %>
+                    <option value="<%= dataUsers[i].name %>"><%= dataUsers[i].name %></option>
+                <% } %>
+            </select>
+            <br>
+            Select Project :
+            <select >
+                    <% for (let i=0; i < dataProjects.length; i++) { %>
+                        <option value="<%= dataProjects[i].name %>"><%= dataProjects[i].name %></option>
+                    <% } %>
+            </select>
+            <br>
+            <input type="submit" value="DONATE">
+        </form>
+    </div>
+</body>
+</html>
