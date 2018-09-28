@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Project.associate = function(models) {
     // associations can be defined here
-    Project.belongsToMany(models.User,{through:Transaction})
+    Project.hasMany(models.Transaction)
+    Project.belongsToMany(models.User,{through:"Transaction"})
   }
   return Project;
 }

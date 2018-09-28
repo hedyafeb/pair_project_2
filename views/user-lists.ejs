@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project List</title>
+    <title>Users List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -16,25 +16,21 @@
         <thead class="thead-dark">
         <tr>
             <th>Name</th>
-            <th>Description</th>
-            <th>Target</th>
-            <th>Current Amount</th>
+            <th>Email</th>
+            <th>Password</th>
             <th colspan="2">Action</th>
         </tr>
         </thead>
-            <% projects.forEach(function(result) { %>
+            <% data.forEach(function(result) { %>
         <tr>
             <td><%= result.name %></td>
-            <td><%= result.description %></td>
-            <td><%= result.target %></td>
-            <td><%= result.currentAmmount %></td>
-            <td><a href="/admins/projects/<%= result.id %>/edit">Edit</a> | <a href="/projects/<%= result.id %>/delete">Delete</a></td>
-            <td><button><a href="">Donate</a></button></td>
+            <td><%= result.email %></td>
+            <td><%= result.password %></td>
+            <td><a href="/admins/users/<%= result.id %>/edit">Edit</a> | <a href="/users/<%= result.id %>/delete">Delete</a></td>
         </tr>
             <%  });  %>
     </table>
-
-    <a href="/projects/add">Add Project</a>
+    <a href="/admins/users/add">Add User</a>
 
     <%- include('./partials/admin.ejs') %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
