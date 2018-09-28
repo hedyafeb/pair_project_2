@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Haii <%=UserId%></h1>
+    <p>Project Name: <%=project.name%></p>
+    <p>Description: <%=project.description%></p>
+    <p>Target: <%=project.target%></p>
+    <p>Current Amount: <%=project.currentAmmount%></p>
+
+    <form action="/users/<%=UserId%>/allProjects/<%=project.id%>/donate" method="POST">
+        <label for="">Donation Amount</label>
+        <input type="text" name="amount">
+        <input type="text" name="UserId" value="<%=UserId%>" hidden>
+        <input type="submit" value="Donate">
+        
+    </form>
+
+</body>
+</html>
+
