@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update User</title>
+</head>
+<body>
+    <form action="/users/<%= data.id %>/edit" method="post">
+        Name : <input type="text" name="name"  value="<%= data.name %>">
+        <br>
+        Email :
+            <input type="text" name="email" value="<%= data.email %>">
+        <br>
+        Password :<input type="text" name="password" value="<%= data.password %>">
+        <br>
+        <input type="submit" value="Update User">
+    </form>
+</body>
+</html>
